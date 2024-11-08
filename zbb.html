@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加载高德地图</title>
+     <style>
+        html,
+        body,
+        #container{
+            width: 100%;
+            height: 100%;
+        }
+     </style>
+     <script type="text/javascript">
+        window._AMapSecurityConfig = {
+          securityJsCode: "0df7d8a86954253be9c1293b61deef4c",
+        };
+      </script>
+      <script src="https://webapi.amap.com/maps?v=2.0&key=b5395897756332b31d892a65021341db"></script>
+</head>
+<body>
+    <div id="container"></div> 
+    <script>
+    const map = new AMap.Map('container',{
+            center: [102.758774,25.059998],            
+            zoom: 20.0,
+            viewMode: '3D',
+            pitch: 30.1,
+          });
+   
+AMap.plugin(['AMap.ToolBar','AMap.Scale','AMap.ControlBar','AMap.Geolocation','AMap.HawkEye'],function(){
+          var toolbar = new AMap.ToolBar({
+          position:{
+            right:'0px',
+            top:'0px'
+          }}); 
+          var Scale = new AMap.Scale();
+          
+  var ControlBar = new AMap.ControlBar();
+  
+  var Geolocation = new AMap.Geolocation({
+  position:{
+            right:'400px',
+            top:'100px'
+          }});
+  
+var HawkEye = new AMap.HawkEye(); 
+ 
+  map.addControl(toolbar);
+  map.addControl(Scale);
+  map.addControl(ControlBar);
+  map.addControl(Geolocation);
+  map.addControl(HawkEye);
+  
+});
+
+//在标记处插入图片
+const position = new AMap.LngLat(102.628348,24.964466);//Marker 经纬度
+const icon = new AMap.Icon({image:'./xishan.jpg',imageSize:[40,40]});
+const marker = new AMap.Marker({
+  position: position,
+  icon:icon  
+});
+map.add(marker);
+
+//在标记处添加文本
+var text = new AMap.Text({
+position: new AMap.LngLat(102.628244,24.964384),
+anchor :'bottom-right',
+text:'西山风景区',
+style:{'background-color':'yellow',},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.624452,24.981003),
+anchor :'bottom-right',
+text:'西山景区-升庵祠',
+style:{'background-color':'yellow',},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.627196,24.970456),
+anchor :'bottom-right',
+text:'华亭禅寺',
+style:{'background-color':'yellow',},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.629175,24.961633),
+anchor :'bottom-right',
+text:'西山景区-太华寺',
+style:{'background-color':'yellow',},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.62295,24.981421),
+anchor :'bottom-right',
+text:'升庵亭',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.624689,24.97757),
+anchor :'bottom-right',
+text:'杨杰墓',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.626434,24.97663),
+anchor :'bottom-right',
+text:'次生林观赏区',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.627255,24.976407),
+anchor :'bottom-right',
+text:'欧式风格草地休闲区',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.628418,24.975589),
+anchor :'bottom-right',
+text:'珍贵树种水杉林',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.625852,24.973615),
+anchor :'bottom-right',
+text:'南洋华侨机工抗日纪念碑',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.627507,24.972818),
+anchor :'bottom-right',
+text:'大圆通殿',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.627305,24.97242),
+anchor :'bottom-right',
+text:'华庭书院',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.627305,24.97242),
+anchor :'bottom-right',
+text:'西山风景区-海会塔',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.631705,24.969614),
+anchor :'bottom-right',
+text:'松隐寺遗址',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.63259,24.966449),
+anchor :'bottom-right',
+text:'明秀园',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.632448,24.9658),
+anchor :'bottom-right',
+text:'西山山神庙',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.630241,24.966172),
+anchor :'bottom-right',
+text:'西山景区-瞰海亭',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.629564,24.961874),
+anchor :'bottom-right',
+text:'西山景区-太华寺',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.634863,24.959375),
+anchor :'bottom-right',
+text:'旭光亭',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.633663,24.958584),
+anchor :'bottom-right',
+text:'龙门胜景',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.633976,24.958178),
+anchor :'bottom-right',
+text:'聂耳雕像',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.639473,24.953442),
+anchor :'bottom-right',
+text:'明代罗崖修路古碑',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.637617,24.953557),
+anchor :'bottom-right',
+text:'草亭',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.638124,24.953179),
+anchor :'bottom-right',
+text:'清风亭',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.639542,24.950594),
+anchor :'bottom-right',
+text:'千步岩',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.639626,24.949871),
+anchor :'bottom-right',
+text:'龙门',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.640007,24.949646),
+anchor :'bottom-right',
+text:'真武殿',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.639929,24.949438),
+anchor :'bottom-right',
+text:'玉皇殿',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.640074,24.949279),
+anchor :'bottom-right',
+text:'圣父母殿',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.640231,24.948972),
+anchor :'bottom-right',
+text:'老君殿',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.640316,24.948714),
+anchor :'bottom-right',
+text:'穿云洞',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.640346,24.948358),
+anchor :'bottom-right',
+text:'天台',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.639578,24.947804),
+anchor :'bottom-right',
+text:'凌虚阁',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.637795,24.946933),
+anchor :'bottom-right',
+text:'美女峰',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.637468,24.948851),
+anchor :'bottom-right',
+text:'小石林浏览区',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.638466,24.949597),
+anchor :'bottom-right',
+text:'龙门索道上站',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.636797,24.950583),
+anchor :'bottom-right',
+text:'迎曦亭',
+style:{'background-color':'red','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.625025,24.978411),
+anchor :'bottom-right',
+text:'毛友贵墓',
+style:{'background-color':'green','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.634086,24.957742),
+anchor :'bottom-right',
+text:'聂耳生平陈列室',
+style:{'background-color':'green','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.619613,24.971802),
+anchor :'bottom-right',
+text:'俭德舍修养森林',
+style:{'background-color':'green','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.617844,24.973435),
+anchor :'bottom-right',
+text:'西山马蜂养殖培训露营农家乐',
+style:{'background-color':'green','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.618357,24.983702),
+anchor :'bottom-right',
+text:'西山森林公园兔乐园',
+style:{'background-color':'green','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.625949,24.958904),
+anchor :'bottom-right',
+text:'昆明太华山国家基准气候站',
+style:{'background-color':'blue','font-size':'12px'},
+});
+map.add(text);
+
+var text = new AMap.Text({
+position: new AMap.LngLat(102.623554,24.969766),
+anchor :'bottom-right',
+text:'西山风景区派出所执勤点',
+style:{'background-color':'blue','font-size':'12px'},
+});
+map.add(text);
+
+const pathArr = [
+  [
+    [
+      [102.628905,24.964425],
+           
+    ],
+  ],
+];
+  
+const polygon= new AMap.Polygon({
+ path: pathArr, //多边形路径
+  fillColor: "#ccebc5", //多边形填充颜色
+  strokeOpacity: 1, //线条透明度
+  fillOpacity: 0.5, //填充透明度
+  strokeColor: "#2b8cbe", //线条颜色
+  strokeWeight: 1, //线条宽度
+  strokeStyle: "dashed", //线样式
+  strokeDasharray: [5, 5], //轮廓的虚线和间隙的样式
+});
+
+map.add(polygon);
+
+//鼠标移出恢复样式
+polygon.on("mouseout", () => {
+  polygon.setOptions({
+    fillOpacity: 0.5,
+    fillColor: "#ccebc5",
+  });
+});
+
+
+var southWest = new AMap.LngLat(102.625776,24.9531); 
+var northEast = new AMap.LngLat(102.63039,24.975446); 
+var bounds = new AMap.Bounds(southWest, northEast); 
+
+var rectangle = new AMap.Rectangle({
+  bounds: bounds,
+  strokeColor: "black", 
+  strokeWeight: 6, 
+  strokeOpacity: 0.5, 
+  strokeStyle: "dashed", 
+  strokeDasharray: [30, 10], 
+  fillColor: "red", 
+  fillOpacity: 0.5, 
+  cursor: "pointer", 
+  zIndex: 50, 
+});
+
+//西山旅游驾车路径规划
+    var path = [];
+    path.push([102.622028,24.98175]);//起点
+    path.push([102.623818,24.980715]);//途径点西山景区升庵祠
+    path.push([102.628297,24.971409]);//途径点华亭禅寺
+    path.push([102.629777,24.961925]);//途径点西山景区太华寺
+    path.push([102.633668,24.958543]);//途径点龙门胜景
+    path.push([102.638204,24.953214]);//途径点清风亭
+    path.push([102.639794,24.949951]);//途径点龙门
+    path.push([102.640282,24.949013]);//途径点老君殿
+    path.push([102.640357,24.948711]);//途径点穿云洞
+    path.push([102.622028,24.98175]);//终点
+    map.plugin("AMap.DragRoute", function() {
+        route = new AMap.DragRoute(map, path, AMap.DrivingPolicy.LEAST_FEE); 
+        route.search(); 
+    });
+
+    
+//区域面积
+    var path = [
+        [102.637126,24.944211],
+        [102.636782,24.944246], 
+        [102.63639,24.944349],
+        [102.635814,24.944653], 
+        [102.635165,24.945175], 
+        [102.634786,24.945685],
+        [102.634452,24.946376], 
+        [102.63433,24.946803],
+        [102.634334,24.946799],
+        [102.634121,24.948277],
+        [102.633916,24.948827],
+        [102.633654,24.949281],
+        [102.633275,24.949558],
+        [102.63273,24.949744],
+        [102.632046,24.949799],
+        [102.631457,24.949902],
+        [102.631,24.950135],
+        [102.630272,24.950739],
+        [102.629997,24.951075],
+        [102.629805,24.951534],
+        [102.629622,24.952265],
+        [102.629522,24.952407],
+        [102.629369,24.952427],
+        [102.629138,24.952415],
+        [102.628377,24.952182],
+        [102.628067,24.952274],
+        [102.625777,24.953064],
+        [102.625724,24.953436],
+        [102.626222,24.954086],
+        [102.626891,24.954479],
+        [102.626314,24.955303],
+        [102.627243,24.955586],
+        [102.627601,24.956133],
+        [102.627389,24.956253],
+        [102.626905,24.955856],
+        [102.624948,24.956019],
+        [102.623449,24.959383],
+        [102.623737,24.962703],
+        [102.614782,24.978496],
+        [102.614494,24.981579],
+        [102.615474,24.983879],
+        [102.618894,24.983692],
+        [102.621901,24.981952],
+        [102.6223,24.981534],
+        [102.623099,24.981869],
+        [102.623191,24.981841],
+        [102.625064,24.981089],
+        [102.624819,24.980699],
+        [102.626508,24.978708],
+        [102.626431,24.977525],
+        [102.630578,24.975297],
+        [102.641661,24.951004],
+        [102.640579,24.946099],
+        [102.6392,24.944816],
+        [102.637887,24.944305],
+        [102.637126,24.944211],
+        
+    ];
+    var polygon1 = new AMap.Polygon({
+        map: map,
+        fillOpacity:0.4,
+        path: path
+    });
+    // 计算西山区域面积
+    var area = Math.round(AMap.GeometryUtil.ringArea(path));
+    var text = new AMap.Text({
+        position: new AMap.LngLat(102.627902,24.964406),
+        text: '区域面积' + area + '平方米',
+        offset: new AMap.Pixel(-20, -20)
+    })
+    map.add(text);
+    map.setFitView();
+
+ // 定义标记点数据
+ var markersData = [
+        {position: [102.628395,24.964464], title: "西山",content:"位于昆明西郊有高原明珠之称的滇池湖畔,距市区15公里,北起碧鸡关,南达灰湾,由碧鸡山、华亭山、太华山、太平山、罗汉山等山峰组成,由北向南逶迤升高,最高峰海拔2507.5米,最高的罗汉山高出滇池水面约620多米。西山公园东濒滇池,西迤长坡,占地约889公顷,开放时间为周一至周日08:30-17:00。"},
+        {position: [102.624392,24.981003], title: "升庵祠", content:"升庵祠坐落在昆明西山山麓、滇池之滨的高峣村。是明万历年间人们为纪念杨升庵，将其旧居“碧峣精舍”改建为祠，供奉其塑像。这是一座三院三殿的中式庭院，背靠西山，面临滇池，旁有清泉，花木繁盛，幽雅秀丽。祠内古木参天，楼台亭阁巍然肃立，祠堂静谧。1987年公布为云南省文物保护单位"},
+        {position: [102.627241,24.970509], title: "华亭禅寺", content: "华亭寺，位于云南省昆明市西山华亭山腰。由碧峣精舍向南斜登上径，上华亭山，修竹蔽天，松荫夹道，在茫茫林海当中，一座饰以丹青的楼亭掩映在松柏林间，这便是著名的华亭寺门户——钟楼，清澈的钟声在山间迥荡。"},
+        {position: [102.629153,24.961637], title: "太华寺", content: "太华寺，居西山群蜂之中，森林茂盛，为西山最高峰，海拔2500米。它始建于元大德十年（公元1306年），为梁王甘麻刺创建。云南禅宗的开山第一祖玄鉴（又名无照）常在此讲经说法。后改称为太华寺，被明黔国公沐英奉为家庙。明末被毁，清康熙二十六年（公元1687年），总督范承勋重建。大悲阁在咸丰年间遭战火烧毁， 光绪九年（公元1883年）又重建。"},
+        {position: [102.634099,24.957726],title: "聂耳生平陈列馆", content: "昆明聂耳纪念馆，位于云南省昆明市西山区西山森林公园，总面积12000平方米。是社会科学类名人专题纪念馆。"},        
+    ];
+       
+    // 遍历数据添加标记点
+    markersData.forEach(function(item) {
+        var marker = new AMap.Marker({
+            position: item.position,
+            title: item.title
+        });
+
+        // 添加点击事件以显示信息窗口
+        marker.on('click', function() {
+            var infoWindow = new AMap.InfoWindow({
+                content: "<div style='width:200px;text-align:center;padding:10px;'>" + item.content + "</div>",
+                offset: new AMap.Pixel(0, -30)
+            });
+            infoWindow.open(map, marker.getPosition());
+        });
+
+        // 将标记点添加到地图上
+        map.add(marker);
+    });
+    </script>   
+  </body>
+</html>
